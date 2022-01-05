@@ -1,0 +1,774 @@
+article {
+  padding-top: 8.4rem;
+}
+
+header {
+  height: 80vh;
+  position: relative;
+  left: 0;
+}
+
+.social-icons {
+  margin-left: 2.5rem;
+  display: flex;
+  position: relative;
+  top: -60px;
+  transition: all 0.5s;
+}
+
+.social-icons li {
+  margin: 0 1.5rem;
+  background: #ccc;
+  padding: 2rem;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+  border: 6px solid #fff;
+}
+
+.social-icons li:hover,
+.social-icons li:active,
+.social-icons li:focus {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+ul.social-icons > li > i.fa {
+  font-size: 3.2rem;
+  cursor: pointer;
+}
+.fa {
+  font-size: 2.5rem;
+
+  color: #988d8a;
+}
+img {
+  max-width: 100px;
+}
+.content-wrapper {
+  padding-bottom: 130px;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+main {
+  background: #fff;
+  position: relative;
+  z-index: 1000;
+}
+.main-raised {
+  margin: -80px 30px 0px;
+  border-radius: 6px;
+  box-shadow: 20px -14px 24px 2px rgba(0, 0, 0, 0.10);
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+
+/************************
+ * Menu
+ ************************/
+.sidebar {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: -350px;
+  bottom: 0px;
+  z-index: 0;
+  width: 250px;
+  padding: 30px;
+  background: #e0e0e0;
+  /* background: #d6d6d6; */
+  transition: all 0.2s ease-in-out;
+  box-shadow: inset -6px -7px 5px rgba(0, 0, 0, 0.14);
+}
+
+div.sidebar_menu--header {
+  text-align: center;
+  position: relative;
+  top: 10%;
+  text-transform: uppercase;
+  font-family: serif;
+}
+
+div.sidebar_menu--header h3 {
+  font-size: x-large;
+}
+div.sidebar_menu--header h3 > span {
+  font-size: medium;
+}
+div.sidebar_menu--header h4 > span {
+  font-size: small;
+}
+hr.sidebar_menu--hr {
+  /* border-bottom: 1px solid #c9c1b7; */
+  border-bottom: 1px solid rgb(192, 192, 192);
+  width: 80%;
+  position: relative;
+  top: 11%;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  padding-top: 70%;
+  font-family: serif;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+  -webkit-font-smoothing: antialiased;
+  color: #4d5357;
+}
+
+.sidebar ul.sidebar_menuContent {
+  padding-top: 80%;
+}
+
+.sidebar ul.sidebar_menuContent li {
+  cursor: pointer;
+  color: #4d5357;
+  font-size: 18px;
+  border-bottom: 1px solid rgb(192, 192, 192);
+
+}
+
+.sidebar ul.sidebar_menuContent li:hover {
+  color: rgba(0, 0, 0, 1);
+}
+
+.sidebar ul.sidebar_contact-info {
+  position: absolute;
+  left: 0;
+  bottom: 2%;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: 16px;
+}
+
+.sidebar ul.contact-info li {
+  line-height: 1.2em;
+}
+
+.toggle {
+  position: fixed;
+  top: 15px;
+  left: 50px;
+  font-size: 32px;
+  z-index: 2;
+  color: #858b8f;
+  transition: all 0.2s ease-in-out;
+}
+.toggle:hover {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
+
+#sidebar-toggler {
+  display: none;
+}
+
+.site-wrap {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  height: 100%;
+  transform-origin: right;
+  overflow: hidden;
+  background: #eee;
+}
+
+/* Aqui veremos que el disparador del menu es completamente en CSS para lo cual uso un checkbox
+y pregunto en el CSS si este esta seleccionado (haciendo click en su label,
+q es el icono de la hamburguesa) y si es asi voy hasta su hermano (site-wrap)
+y dentro de este me empiezo a mover hasta el menu sidebar */
+
+/* Seccion codigo con el desplazamiento de los elementos de la pagina deseados al hacer
+click en el menu hamburgueza*/
+#sidebar-toggler:checked + .site-wrap header > .sidebar {
+  left: 0px;
+}
+#sidebar-toggler:checked + .site-wrap > label.toggle {
+  left: 110px;
+}
+#sidebar-toggler:checked + .site-wrap > header .social-icons {
+  left: 110px;
+  top: 92%;
+}
+#sidebar-toggler:checked + .site-wrap > header > div.bird-box {
+  background-position: 55% -50%;
+}
+
+#sidebar-toggler:checked + .site-wrap > header > div.back {
+  left: 80%;
+  top: 550px;
+}
+#sidebar-toggler:checked + .site-wrap > header > div.fore-bird {
+  left: 67%;
+  top: 510px;
+}
+#sidebar-toggler:checked + .site-wrap {
+  padding-left: 120px;
+}
+#sidebar-toggler:checked + .site-wrap > .main-raised {
+  margin: 0 0 0 130px;
+}
+#sidebar-toggler:checked + .site-wrap > footer {
+  margin: 0 0 0 130px;
+}
+#sidebar-toggler:checked + .site-wrap > footer > div .footer-wrapper__list {
+  margin-left: 30px;
+}
+#sidebar-toggler:checked
+  + .site-wrap
+  > footer
+  > div
+  .footer-wrapper__autor-rights {
+  margin-right: 100px;
+}
+
+/*Parallax(The magix is coming)*/
+/*this is the header who contain the images*/
+.bird-box {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100vw;
+  background-image: url(/images/3375004111_2_4_1.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-color: #f1f1f1;
+  position: top center;
+  /*Esta propiedad es la q hace q la imagen se quede grabada en el fondo al hacer scroll*/
+  background-attachment: fixed;
+  transition: all 0.5s ease-in-out;
+}
+
+.logo {
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  margin-top: -70px;
+  z-index: 0;
+}
+.header-text {
+  width: 550px;
+  height: 200px;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  background-image: url(/images/titre2.png);
+  background-repeat: no-repeat;
+  z-index: 5;
+}
+.logo span.big-font {
+  font-family: "Domine", serif;
+  text-transform: uppercase;
+  font-size: 4.8rem;
+}
+.sub-logo {
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  top: 56%;
+  margin-top: -70px;
+  font-weight: lighter;
+}
+.sub-logo span.normal-font {
+  font-size: 3.5rem;
+  color: #3f464c;
+}
+.logo-overlay {
+  width: 450px;
+  height: 150px;
+  background: #303952;
+  z-index: 1;
+  opacity: 0.35;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-left: -225px;
+}
+.fore-bird {
+  background-image: url(/images/logo/front.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 97%;
+  background-color: #c9c1b7;
+  height: 353px;
+  /*Estos son los codigos para centrar un elem tanto vertical como horizontalmente (en logo lo hicimos verticalmente), simplemente declaras un ancho o alto, posicionas (position absolute)el elem en el medio (50%) y luego le das un margen de la mitad del ancho o alto que definiste para ella*/
+  position: absolute;
+  width: 250px;
+  left: 65%;
+  box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.14);
+  top: 420px;
+  z-index: 0;
+  transition: left, top 0.3s ease-in-out;
+}
+
+.back {
+  background-image: url(/images/logo/back.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 97%;
+  background-color: #988d8a;
+  height: 353px;
+  /*Estos son los codigos para centrar un elem tanto vertical como horizontalmente (en logo lo hicimos verticalmente), simplemente declaras un ancho o alto, posicionas (position absolute)el elem en el medio (50%) y luego le das un margen de la mitad del ancho o alto que definiste para ella*/
+  position: absolute;
+  width: 210px;
+  left: 79%;
+  box-shadow: 4px 2px 5px rgba(0, 0, 0, 0.24);
+  top: 500px;
+  z-index: 1;
+  transition: left, top 0.3s ease-in-out;
+  z-index: 2000;
+}
+
+
+/* ********************
+  Articles section
+*********************** */
+.articles-wrapper {
+  width: 150%;
+  margin-left: -25%;
+  /* outline: 1px solid; */
+  display: flex;
+  justify-content: space-between;
+}
+.articles--box {
+  height: 350px;
+  width: 250px;
+  margin: 0 2.5rem 0 0;
+  border-radius: 3px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.14);
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #f2f2f2;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+}
+.articles--box:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.14);
+  cursor: pointer;
+}
+.articles--box span {
+  position: absolute;
+  bottom: -5rem;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+}
+
+.cool-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #777;
+  transition: width 0.3s;
+}
+.cool-link:hover::after {
+  width: 100%;
+}
+.articles--box:hover .cool-link::after {
+  width: 100%;
+}
+
+.articles-wrapper .articles--box:nth-child(1) {
+  background-image: url(/images/3375004111_1_1_1.jpg);
+}
+.articles-wrapper .articles--box:nth-child(2) {
+  background-image: url(/images/3375004111_2_1_1.jpg);
+}
+.articles-wrapper .articles--box:nth-child(3) {
+  background-image: url(/images/50464973_016_e.jpg);
+  margin-right: 0;
+}
+
+/********* Items Section ********/
+.articles-container {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  top: 115px;
+}
+
+.sacs-container,
+.bags-container,
+.bracalets-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  /* opacity: 0;
+	transform: translateX(20px);
+  transition: all 0.5s ease-in-out; */
+}
+.margin {
+  margin-top: 5rem;
+}
+.item-title {
+  position: relative;
+  left: 25px;
+  opacity: 0;
+  /* transform: translateX(25px); */
+  transition: all 0.5s ease-in;
+  color: #777;
+  /* display: none; */
+  text-transform: uppercase;
+}
+.items-wrapper {
+  padding: 0;
+  margin: 75px 0 250px 0;
+}
+
+.bags-container,
+.bracalets-container {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+.is-showing {
+  display: block;
+}
+
+.large-window {
+  height: 460px;
+  background-image: url(/images/model2.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-attachment: fixed;
+  margin-top: 50px;
+  border-radius: 50%;
+  width: 460px;
+  position: relative;
+  left: 50%;
+  margin-left: -230px;
+}
+/************************
+ * Testimonios
+ ************************/
+.testimonios-wrapper {
+  max-width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  display: relative;
+}
+
+.testimonios h2 {
+  margin-bottom: 30px;
+}
+
+.carousel-inner > .item > img {
+  line-height: 1;
+  opacity: 0;
+}
+
+.carousel-control.right,
+.carousel-control.left {
+  /*  Tuve que ponerle !important pq la propiedad background-image por si sola no tenia efecto*/
+  background-image: none !important;
+  height: 80px;
+  width: 80px;
+  top: 120px;
+  border-radius: 50%;
+}
+
+.carousel-indicators li {
+  background-color: rgba(180, 180, 180, 0.25);
+  color: rgba(0, 0, 0, 0.44);
+}
+
+.carousel-indicators li.active {
+  background-color: #4c4c4c;
+  border: 0;
+}
+
+.item {
+  padding: 20px;
+}
+.item h4 {
+  font-size: 19px;
+  line-height: 1.375em;
+  font-weight: 400;
+  font-style: italic;
+  margin: 70px 0;
+}
+.item span {
+  font-style: normal;
+}
+.item img {
+  margin: 20px auto;
+}
+
+.fotos {
+  position: relative;
+  top: 45px;
+  left: 0px;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+.fotos .fotos_carrusel {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  margin: 0 auto;
+  opacity: 0;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+.fotos .fotos_carrusel.show {
+  opacity: 1;
+}
+
+.carousel-inner {
+  margin-top: 15px;
+}
+/************************
+ * Contact
+ ************************/
+
+.contact-section {
+  margin-top: 200px;
+  position: relative;
+}
+
+.contact-section .card {
+  background-image: url(/images/logo/back.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 97%;
+  background-color: #988d8acc;
+  height: 353px;
+  /*Estos son los codigos para centrar un elem tanto vertical como horizontalmente (en logo lo hicimos verticalmente), simplemente declaras un ancho o alto, posicionas (position absolute)el elem en el medio (50%) y luego le das un margen de la mitad del ancho o alto que definiste para ella*/
+  position: absolute;
+  width: 210px;
+  left: 8%;
+  bottom: -20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.contact-section hr {
+  width: 80%;
+  border-top: 1px solid #eee;
+}
+.contact-section .contact-wrap {
+  width: 80%;
+  padding: 0;
+  background-color: #eee;
+  /* box-shadow:  3px -3px 5px rgb(0 0 0 / 14%); */
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  z-index: -1;
+  top: 45px;
+}
+
+.contact-section .contact-wrap .vertical-text-address {
+  font-family: SIMPLIFICA;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 36px;
+  position: relative;
+  top: -75px;
+  right: 10px;
+  writing-mode: vertical-lr;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+.contact-section .contact-wrap hr.vertical-line-address {
+  width: 80px;
+  border-top: 1.5px solid #b2b2b2;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(90deg);
+  /* Safari */
+  margin: -20px 0 0 0;
+}
+.contact-section .contact-wrap .text-address {
+  position: relative;
+  left: 30px;
+  margin-top: 70px;
+  text-align: left;
+}
+.contact-section .contact-wrap .vertical-text-phone {
+  font-family: SIMPLIFICA;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 36px;
+  position: relative;
+  top: 50px;
+  writing-mode: vertical-lr;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+.contact-section .contact-wrap hr.vertical-line-phone {
+  width: 80px;
+  border-top: 2px solid #b2b2b2;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(90deg);
+  /* Safari */
+  margin: 70px 0 0 5px;
+}
+.contact-section .contact-wrap .text-phone {
+  margin-top: 70px;
+  margin-left: -50px;
+}
+.contact-section .contact-wrap .vertical-text-email {
+  font-family: SIMPLIFICA;
+  font-weight: bold;
+  font-size: 36px;
+  text-transform: uppercase;
+  position: relative;
+  top: 25px;
+  writing-mode: vertical-lr;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+.contact-section .contact-wrap hr.vertical-line-email {
+  width: 80px;
+  border-top: 2px solid #b2b2b2;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(90deg);
+  /* Safari */
+  margin: 95px 0 0 8px;
+}
+.contact-section .contact-wrap .text-email {
+  margin-top: 75px;
+  margin-left: 45px;
+}
+.contact-section .contact-wrap hr.vertical-line-email2 {
+  width: 100px;
+  border-top: 2px solid #b2b2b2;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(90deg);
+  /* Safari */
+  margin: 85px 0 0 0;
+}
+.contact-section .contact-wrap .img-wrap {
+  height: 520px;
+  width: 520px;
+  background-image: url(/img/Aicha.jpg);
+  background-position: center;
+  background-size: 95%;
+}
+
+.text-address,
+.text-email,
+.text-phone {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* .testing {
+  margin-top: 100px;
+  font-family: SIMPLIFICA;
+  font-size: 60px;
+  text-transform: uppercase; } */
+
+.contact-section_address {
+  /* padding-left:25px; */
+  margin-left: 20px;
+  right: 35px;
+}
+.contact-section_emial {
+  padding-left: 25px;
+  margin-left: 20px;
+}
+
+/*==============================
+  Footer
+============================== */
+.global-footer {
+  background-color: transparent;
+  padding: 6rem 0 2.5rem 0;
+}
+
+.global-footer .footer-wrapper {
+  width: 70vw;
+  margin: 0 auto;
+  padding: 0 1em;
+  padding-bottom: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.footer-wrapper__list {
+  text-align: left;
+}
+
+.footer-wrapper__list a {
+  color: inherit;
+}
+.footer-wrapper__autor-rights {
+  width: 15%;
+}
+.footer-wrapper__autor-rights p {
+  margin-right: 12px;
+}
+.footer-wrapper__autor-rights span {
+  white-space: nowrap;
+}
+
+.bare-list {
+  list-style-type: none;
+  padding: 0;
+}
+.espace {
+  margin-bottom: 200px;
+}
+.footer-logo {
+  background-image: url("/images/logo/front.png");
+  background-position: center;
+  background-size: 100%;
+  height: 170px;
+  width: 170px;
+}
+.footer-logo--text {
+  position: relative;
+  top: -1.5rem;
+}
+.footer-logo--text p {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+.footer-logo--text :first-child {
+  font-size: 1.5rem;
+}
+.footer-logo--text :first-child span {
+  font-size: 1.2rem;
+}
+.footer-logo--text :last-child {
+  font-weight: 300;
+  font-size: 1.1rem;
+}
+.footer-logo--text :last-child span {
+  font-size: 1rem;
+}
+
+footer .social-icons li {
+  border: 0 !important;
+  padding: 0;
+  background: transparent;
+}
